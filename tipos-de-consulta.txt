@@ -1,0 +1,55 @@
+SELECT:
+Suponha que você tem uma tabela chamada "clientes" com as colunas "nome", "idade" e "cidade". 
+Para selecionar o nome e a cidade de todos os clientes com mais de 18 anos, você pode usar a seguinte consulta:
+
+SELECT nome, cidade FROM clientes WHERE idade > 18;
+
+
+INSERT:
+Suponha que você queira adicionar um novo cliente à tabela "clientes".
+ Para fazer isso, você pode usar a seguinte consulta:
+
+INSERT INTO clientes (nome, idade, cidade) VALUES ('João', 25, 'São Paulo');
+
+
+UPDATE:
+Suponha que você queira atualizar a idade de um cliente específico na tabela "clientes". 
+Para fazer isso, você pode usar a seguinte consulta:
+
+UPDATE clientes SET idade = 30 WHERE nome = 'João';
+
+
+DELETE:
+Suponha que você queira excluir todos os clientes com menos de 18 anos da tabela "clientes". 
+Para fazer isso, você pode usar a seguinte consulta:
+
+DELETE FROM clientes WHERE idade < 18;
+
+
+JOIN:
+Suponha que você tenha duas tabelas chamadas "pedidos" e "produtos".
+ A tabela "pedidos" tem as colunas "id_pedido", "id_produto" e "quantidade". A tabela "produtos" tem as colunas "id_produto" e "nome_produto". 
+Para selecionar o nome do produto e a quantidade de todos os pedidos, você pode usar a seguinte consulta:
+
+SELECT produtos.nome_produto, pedidos.quantidade 
+FROM pedidos 
+JOIN produtos ON pedidos.id_produto = produtos.id_produto;
+
+
+GROUP BY:
+Suponha que você tenha uma tabela chamada "vendas" com as colunas "produto", "data" e "quantidade".
+ Para calcular a quantidade total vendida de cada produto, você pode usar a seguinte consulta:
+
+ SELECT produto, SUM(quantidade) AS total_vendido 
+FROM vendas 
+GROUP BY produto;
+
+
+ORDER BY:
+Suponha que você tenha a mesma tabela "vendas" do exemplo anterior e queira classificar os resultados por ordem decrescente de quantidade vendida. 
+Para fazer isso, você pode usar a seguinte consulta:
+
+SELECT produto, SUM(quantidade) AS total_vendido 
+FROM vendas 
+GROUP BY produto 
+ORDER BY total_vendido DESC;
